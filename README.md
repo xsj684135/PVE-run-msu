@@ -17,4 +17,6 @@ apt-get install alien fakeroot
 
 开始转换
 fakeroot alien MSU-4.1.10.2042-1.x86_64.rpm
+跑完没报错就开始下一步，如果报错的话自己研究研究
+![image](https://github.com/xsj684135/PVE-run-msu/assets/50570049/522affaa-b5dc-46b2-892d-9f63385c9910)
 
