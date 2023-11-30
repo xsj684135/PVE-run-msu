@@ -29,7 +29,7 @@ rpm -qlp --scripts MSU-4.1.10.2042-1.x86_64.rpm
 ```bash
 apt-get install equivs
 ```
-
+```bash
 cat <<EOF >> libssl1.0.0.ctl
 Section: misc
 Priority: optional
@@ -42,5 +42,31 @@ Description: dummy package to install MSU
  .
  This is just the fake package to satisfy that dependency
 EOF
+```
+```bash
+equivs-build libssl1.0.0.ctl
+```
 
-
+接下来安装依赖和包：
+```bash
+dpkg -i libssl-1.0.0_1.0.1_all.deb
+dpkg -i msu_4.1.10.2042-2_amd64.deb
+apt-get install -f
+```
+接下来挨个跑
+```bash
+cp /opt/marvell/storage/svc/MSUWebService /etc/init.d/
+cp /opt/marvell/storage/svc/MarvellStorageAgent /etc/init.d/
+systemctl daemon-reload
+install -D -m755 /lib64/libeventshare.so /usr/lib/libeventshare.so
+install -D -m755 /lib64/libmvraid.so /usr/lib/libmvraid.so
+modprobe sg
+echo 'sg'|tee -a /etc/modules
+systemctl enable --now MarvellStorageAgent
+```
+然后就好了
+```bash
+systemctl start MSUWebService #开启web
+systemctl stop MSUWebService #关闭web
+/opt/marvell/storage/cli/mvcli #命令行
+```
