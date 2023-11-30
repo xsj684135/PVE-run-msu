@@ -69,4 +69,5 @@ systemctl enable --now MarvellStorageAgent
 systemctl start MSUWebService #开启web
 systemctl stop MSUWebService #关闭web
 /opt/marvell/storage/cli/mvcli #命令行
+systemctl enable MSUWebService #开机启动 
 ```
