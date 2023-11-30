@@ -12,19 +12,23 @@
 
 HPE也有提供 但是这个最新，所以在这里下载：https://support.lenovo.com/de/en/downloads/ds504249
 
-安装alien fakeroot用于转换
+安装alien fakeroot用于转换.
+```bash
 apt-get install alien fakeroot
-
+```
 开始转换
+```bash
 fakeroot alien MSU-4.1.10.2042-1.x86_64.rpm
-跑完没报错就开始下一步，如果报错的话自己研究研究
+```
 ![image](https://github.com/xsj684135/PVE-run-msu/assets/50570049/522affaa-b5dc-46b2-892d-9f63385c9910)
-
-跑这个
+跑完没报错就开始下一步，如果报错的话自己研究研究
+```bash
 rpm -qlp --scripts MSU-4.1.10.2042-1.x86_64.rpm
-
+```
 然后跑这个
+```bash
 apt-get install equivs
+```
 
 cat <<EOF >> libssl1.0.0.ctl
 Section: misc
