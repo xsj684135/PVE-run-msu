@@ -25,7 +25,7 @@ rpm -qlp --scripts MSU-4.1.10.2042-1.x86_64.rpm
 
 然后跑这个
 apt-get install equivs
---------
+
 cat <<EOF >> libssl1.0.0.ctl
 Section: misc
 Priority: optional
@@ -38,4 +38,4 @@ Description: dummy package to install MSU
  .
  This is just the fake package to satisfy that dependency
 EOF
------
+
