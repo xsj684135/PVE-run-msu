@@ -10,7 +10,7 @@
 
 引用一位德国老哥的：https://blog.florianheinle.de/raid-controller-marvell-88SE9230-hp-microserver-gen10-linux-debian
 
-HPE也有提供 但是这个最新，所以在这里下载：https://support.lenovo.com/de/en/downloads/ds504249
+HPE也有提供 但是这个最新，所以在这里下载：[https://support.lenovo.com/de/en/downloads/ds504249](https://support.lenovo.com/hk/en/downloads/ds539334-marvell-storage-utility-for-linux-for-linux)
 
 安装alien fakeroot用于转换.
 ```bash
